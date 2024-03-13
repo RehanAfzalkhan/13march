@@ -1,0 +1,482 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.870
+Designing an API is pretty
+much an art form in itself.
+
+2
+00:00:03.870 --> 00:00:06.990
+There's a lot of craft
+and thoughtfulness in
+
+3
+00:00:06.990 --> 00:00:11.050
+how we design things that
+we present to an end-user.
+
+4
+00:00:25.010 --> 00:00:27.930
+I'm Celina, a software
+engineer at Meta,
+
+5
+00:00:27.930 --> 00:00:29.415
+working on Instagram reels.
+
+6
+00:00:29.415 --> 00:00:32.220
+I first got into
+software engineering,
+
+7
+00:00:32.220 --> 00:00:34.790
+I think around the time when
+I was in middle school.
+
+8
+00:00:34.790 --> 00:00:36.860
+I really fell in love
+with the process
+
+9
+00:00:36.860 --> 00:00:39.125
+of web development
+and web design,
+
+10
+00:00:39.125 --> 00:00:43.130
+which I actually learned just
+by myself out of curiosity.
+
+11
+00:00:43.130 --> 00:00:46.220
+I would dissect websites and see
+
+12
+00:00:46.220 --> 00:00:49.295
+how they were functioning
+under the hood.
+
+13
+00:00:49.295 --> 00:00:51.680
+I would follow
+tutorials by myself.
+
+14
+00:00:51.680 --> 00:00:52.910
+I really fell in love with
+
+15
+00:00:52.910 --> 00:00:55.010
+this process of
+creating something
+
+16
+00:00:55.010 --> 00:00:58.580
+tangible out of something
+seemingly abstract,
+
+17
+00:00:58.580 --> 00:01:00.710
+like an idea or like
+
+18
+00:01:00.710 --> 00:01:04.755
+blobs and lines of
+code in this case.
+
+19
+00:01:04.755 --> 00:01:07.070
+APIs are essentially
+
+20
+00:01:07.070 --> 00:01:08.195
+the bread and butter of
+
+21
+00:01:08.195 --> 00:01:10.610
+end-to-end full-stack
+developments.
+
+22
+00:01:10.610 --> 00:01:12.020
+I say bread and butter just
+
+23
+00:01:12.020 --> 00:01:13.880
+because they're so
+crucial in terms
+
+24
+00:01:13.880 --> 00:01:15.830
+of describing how
+software components
+
+25
+00:01:15.830 --> 00:01:17.240
+interact with each other.
+
+26
+00:01:17.240 --> 00:01:19.355
+Whenever you pull up
+your Instagram app,
+
+27
+00:01:19.355 --> 00:01:22.370
+you are interacting with
+APIs all over the place.
+
+28
+00:01:22.370 --> 00:01:25.280
+There's a specific set of
+APIs that renders things like
+
+29
+00:01:25.280 --> 00:01:28.745
+stories and photos and
+videos in your home feed.
+
+30
+00:01:28.745 --> 00:01:30.740
+There's another API that
+does the same thing,
+
+31
+00:01:30.740 --> 00:01:32.555
+but on your explore page.
+
+32
+00:01:32.555 --> 00:01:34.640
+There's another
+API that registers
+
+33
+00:01:34.640 --> 00:01:36.890
+things like
+double-taps on a post,
+
+34
+00:01:36.890 --> 00:01:38.555
+as likes on the back end,
+
+35
+00:01:38.555 --> 00:01:40.130
+and that tells your
+device to render
+
+36
+00:01:40.130 --> 00:01:42.510
+that little heart icon
+in the red color.
+
+37
+00:01:42.510 --> 00:01:44.030
+You can think of APIs as
+
+38
+00:01:44.030 --> 00:01:46.550
+essentially an
+intermediary between
+
+39
+00:01:46.550 --> 00:01:49.605
+an end-user and a
+back-end service.
+
+40
+00:01:49.605 --> 00:01:53.555
+Say you can describe an
+API as a bank teller,
+
+41
+00:01:53.555 --> 00:01:55.520
+and the data the
+back-end services
+
+42
+00:01:55.520 --> 00:01:57.695
+host as the money in the bank.
+
+43
+00:01:57.695 --> 00:01:59.840
+When you are a
+customer wanting to
+
+44
+00:01:59.840 --> 00:02:01.985
+withdraw or deposit
+money from the bank,
+
+45
+00:02:01.985 --> 00:02:03.590
+you're not necessarily
+interacting
+
+46
+00:02:03.590 --> 00:02:05.045
+with the money directly.
+
+47
+00:02:05.045 --> 00:02:06.665
+Instead, you go
+to a bank teller,
+
+48
+00:02:06.665 --> 00:02:08.165
+in this case, an API,
+
+49
+00:02:08.165 --> 00:02:10.325
+which handles things
+like communications
+
+50
+00:02:10.325 --> 00:02:12.860
+between the end user and
+the back-end services,
+
+51
+00:02:12.860 --> 00:02:14.870
+and also tells you
+how much money
+
+52
+00:02:14.870 --> 00:02:17.169
+or data you're able to access.
+
+53
+00:02:17.169 --> 00:02:21.335
+APIs at Meta are designed with
+specific purpose in mind.
+
+54
+00:02:21.335 --> 00:02:23.780
+Say the goal is to design API
+
+55
+00:02:23.780 --> 00:02:26.150
+for a user-facing
+product or feature.
+
+56
+00:02:26.150 --> 00:02:29.640
+Typically, we have a designer
+that creates the mocks,
+
+57
+00:02:29.640 --> 00:02:30.710
+and we work with
+
+58
+00:02:30.710 --> 00:02:32.210
+a product designer that
+
+59
+00:02:32.210 --> 00:02:34.070
+essentially provides
+information on,
+
+60
+00:02:34.070 --> 00:02:35.930
+here are the high level
+objectives of what
+
+61
+00:02:35.930 --> 00:02:38.680
+this end product or
+service could look like.
+
+62
+00:02:38.680 --> 00:02:41.450
+Then typically, the
+actual API design
+
+63
+00:02:41.450 --> 00:02:44.390
+is a handshake agreement
+between several engineers.
+
+64
+00:02:44.390 --> 00:02:46.355
+Typically, back-end and
+front end engineers
+
+65
+00:02:46.355 --> 00:02:48.395
+agree on the API structure.
+
+66
+00:02:48.395 --> 00:02:49.850
+They also agree on things
+
+67
+00:02:49.850 --> 00:02:51.350
+like what the request
+structure could
+
+68
+00:02:51.350 --> 00:02:54.955
+look like and what the response
+could look like as well.
+
+69
+00:02:54.955 --> 00:02:57.635
+In thinking about
+designing an API,
+
+70
+00:02:57.635 --> 00:02:58.820
+I think it's really important
+
+71
+00:02:58.820 --> 00:03:01.520
+to consider who
+your end user is.
+
+72
+00:03:01.520 --> 00:03:03.665
+Another thing to
+consider is also
+
+73
+00:03:03.665 --> 00:03:04.910
+who are the people
+who are going to
+
+74
+00:03:04.910 --> 00:03:06.215
+be accessing the data,
+
+75
+00:03:06.215 --> 00:03:08.390
+and also your API and services.
+
+76
+00:03:08.390 --> 00:03:09.980
+You want to make sure
+that you add a layer
+
+77
+00:03:09.980 --> 00:03:11.480
+of security in the form of
+
+78
+00:03:11.480 --> 00:03:13.100
+credentials to your request
+
+79
+00:03:13.100 --> 00:03:15.980
+in order to preserve
+that integrity as well.
+
+80
+00:03:15.980 --> 00:03:20.355
+My advice for aspiring
+developers is,
+
+81
+00:03:20.355 --> 00:03:23.685
+come at API design
+with an open mind.
+
+82
+00:03:23.685 --> 00:03:24.740
+Remember that it's going be
+
+83
+00:03:24.740 --> 00:03:26.390
+a collaborative process between
+
+84
+00:03:26.390 --> 00:03:27.650
+several engineers and
+
+85
+00:03:27.650 --> 00:03:30.410
+potentially also product
+managers and designers,
+
+86
+00:03:30.410 --> 00:03:32.630
+folks who are going to
+be really invested in
+
+87
+00:03:32.630 --> 00:03:35.540
+the outcome of the API in
+the form of a product,
+
+88
+00:03:35.540 --> 00:03:37.445
+or an app, or a service even.
+
+89
+00:03:37.445 --> 00:03:38.755
+When you're building an API,
+
+90
+00:03:38.755 --> 00:03:40.010
+you really have to think about
+
+91
+00:03:40.010 --> 00:03:42.740
+components as part
+of a larger piece.
+
+92
+00:03:42.740 --> 00:03:47.045
+There is beauty in
+having an output that
+
+93
+00:03:47.045 --> 00:03:49.100
+is reflective of things
+
+94
+00:03:49.100 --> 00:03:51.650
+that you see in application
+in the real world.
+
+95
+00:03:51.650 --> 00:03:54.905
+Have fun with it,
+brainstorm with engineers,
+
+96
+00:03:54.905 --> 00:03:56.735
+and get a sense of
+
+97
+00:03:56.735 --> 00:04:00.980
+what the target architecture
+for an API could be.
+
+98
+00:04:00.980 --> 00:04:04.520
+I hope that you have a better
+sense of what APIs are,
+
+99
+00:04:04.520 --> 00:04:07.400
+and how they fit in the software
+development life cycle.
+
+100
+00:04:07.400 --> 00:04:09.395
+I know that you have a
+lot of work ahead of you,
+
+101
+00:04:09.395 --> 00:04:11.780
+but keep checking at it just
+because it's so worth it to
+
+102
+00:04:11.780 --> 00:04:13.190
+know how all these
+different components
+
+103
+00:04:13.190 --> 00:04:15.210
+interact with each other.
